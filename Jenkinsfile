@@ -15,8 +15,8 @@ pipeline {
             }
             stage('Deploy'){
                 steps{
-                    sh 'cp -r $WORKSPACE/build /var/jenkins_home/workspace'
-                    sh 'curl -u admin:admin http://13.127.180.51:8888/manager/reload?path=/build'
+                    sh 'cp -r $WORKSPACE/build /opt/apache-tomcat-9.0.31/webapps'
+                    sh 'curl -u admin:admin http://13.127.4.30:8888/manager/reload?path=/build'
                 }
             }
             }
